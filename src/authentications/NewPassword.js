@@ -4,7 +4,7 @@ import { useTranslate } from '@tolgee/react';
 import { LanguageSelect } from '../LanguageSelect';
 import { Link } from 'react-router-dom';
 
-function Login() {
+function NewPassword() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -12,7 +12,6 @@ function Login() {
 
   const handleLogin = () => {
     if (username === 'admin' && password === 'admin') {
-      // Přesměrování na jinou stránku
       navigate('/');
     }
   };
@@ -47,37 +46,32 @@ function Login() {
           </div>
         </div>
 
-        <div className="absolute h-[450px] w-96 bg-black  rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-50  ">
-          <div className="p-8 my-5">
+        <div className="absolute h-80 w-96 bg-black  rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-50  ">
+          <div className="p-8 ">
             {' '}
-            <h1 className="text-white text-4xl pb-2">{t('login')}</h1>
+            <h1 className="text-white text-4xl pb-2">New password</h1>
             <p className="text-white text-sm pb-5">
               Keep it all together and you'll be fine{' '}
             </p>
             <input
               type="text"
-              placeholder="Email"
+              placeholder="New email"
               className="bg-transparent border border-zinc-500 w-full mb-4 py-2 pl-2 text-white"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             ></input>
             <input
               type="text"
-              placeholder={t('password')}
+              placeholder="Confirm new password"
               className="bg-transparent appearance-none border border-zinc-500 w-full mb-4 py-2 pl-2 text-white"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             ></input>
-            <Link to="/forgotpassword">
-              <button className="text-textGrey mx-auto text-sm mb-16 cursor-pointer flex items-center justify-center hover:text-white">
-                {t('forgot_password')}
-              </button>
-            </Link>
             <button
               onClick={handleLogin}
               className="w-full px-2 py-2 bg-gradient-to-r from-[#7c2889] via-[#59277c]  to-[#2a1d54] rounded-lg text-white "
             >
-              {t('login')}
+              Save
             </button>
           </div>
         </div>
@@ -86,4 +80,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default NewPassword;

@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+body.lock-scroll {
+  overflow: auto;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 .react-select__menu {
   animation: dropdownFadeIn 0.5s ease-out;
   position: absolute !important;
@@ -35,19 +46,98 @@
   cursor: pointer;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
-/* 
-input[type='file']::file-selector-button {
-  content: attr(data-file-button-text);
+
+/* Emails */
+/* Přepíše výchozí styly knihovny */
+.react-tagsinput .react-tagsinput-inputProps {
+  width: 100% !important;
+}
+.react-tagsinput {
+  background-color: #f8f9fa; /* Světlejší pozadí */
+  border: 1px solid #ced4da; /* Šedý okraj */
+  overflow: hidden;
+  padding-left: 5px;
+  width: 100% !important;
 }
 
-input[type='file']::before {
-  content: attr(data-file-no-file-text);
+.react-tagsinput--focused {
+  border-color: #80bdff; /* Světle modrý okraj při zaměření */
+}
+
+.react-tagsinput-tag {
+  background-color: #060621 !important; /* Tmavě šedé pozadí */
+  border-radius: 50px !important;
+  border: 1px solid #312d4a !important; /* Tmavší šedý okraj */
+  color: #fff !important; /* Bílý text */
   display: inline-block;
-  padding: 0.5em 1em;
-  color: #000;
-  background-color: #f3f3f3;
-  border: 1px solid #ccc;
-  width: 20px;
-  border-radius: 4px;
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  padding-left: 10px !important;
+}
+
+.react-tagsinput-remove {
   cursor: pointer;
-} */
+  font-weight: bold;
+  color: #cc0000;
+}
+
+.react-tagsinput-tag a::before {
+  content: ' ×';
+}
+
+.react-tagsinput-input {
+  border: 0;
+  color: #343a40; /* Tmavě šedý text */
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 6px;
+  margin-top: 1px;
+  outline: none;
+  padding: 5px;
+  width: 150px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: #2b313a;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  color: white;
+}
+/* Add this CSS in your main CSS file */
+.line-numbers {
+  width: 40px; /* Adjust width as necessary */
+  padding: 10px;
+  border-right: 1px solid #ddd;
+  text-align: right;
+  background-color: #f0f0f0;
+  color: #888;
+  overflow: hidden;
+  user-select: none;
+  resize: none; /* Prevent resizing */
+}
+
+@layer base {
+  body {
+    @apply font-primary;
+  }
+}

@@ -2,6 +2,19 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts.tsx}'],
   theme: {
+    fontSize: {
+      xs: 'O.7rem',
+      sm: '0.8rem',
+      base: '1rem',
+      xl: '1.25rem',
+      '2xl': '1.563rem',
+      '3xl': '1.953rem',
+      '4xl': '2.441rem',
+      '5xl': '3.052rem',
+    },
+    fontFamily: {
+      primary: 'Roboto, sans-serif',
+    },
     screens: {
       sm: '640px',
       md: '768px',
@@ -34,7 +47,6 @@ module.exports = {
         backgroundBlack: '#1e1d1d',
         darkPink: '#28243c',
         lightPink: '#312d4a',
-        buttonPink: '#8b58fa',
         hoverPink: '#8455ed',
 
         midnightBlue: '#0b0e19',
@@ -48,6 +60,16 @@ module.exports = {
         cards: '#12122b',
         background: '#060621',
         buttonViolet: '#7c2889',
+        newBackground: '#242830',
+        container: '#2b313a',
+        buttonBlue: '#6E7DFF',
+        buttonEclipse: '#5A5C83',
+        miniText: '#979DAD',
+        buttonHover: '#353C58',
+        textHover: '#8E8DF0',
+        buttonPink: '#6E5A74',
+        textPink: '#C288B6',
+        buttonGreen: '#12a154',
       },
     },
   },
